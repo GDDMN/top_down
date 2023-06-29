@@ -3,6 +3,9 @@ using UnityEngine;
 public class ActorMovements : MonoBehaviour
 {
   [SerializeField] private float speed;
+  [SerializeField] private Bullet bullet;
+
+  [SerializeField] private Transform bulletSpawn;
 
   public void Move(Vector2 direction)
   {
@@ -22,5 +25,7 @@ public class ActorMovements : MonoBehaviour
 
   public void Shoot()
   {
+    var newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+    newBullet.Init(bulletSpawn);
   }
 }
