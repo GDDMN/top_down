@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
   private void Start()
   {
-    
+    playerInput.Player.Shoot.performed += context => actorMovements.Shoot();
   }
 
   private void Update()
