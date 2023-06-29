@@ -18,7 +18,14 @@ public class AssaultRifle : Gun
 
   public override void Shoot()
   {
-    var newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
-    newBullet.Init(bulletSpawn);
+    float angle = Random.Range(bulletSpawn.rotation.eulerAngles.x - shootingAngle/2,
+                               bulletSpawn.rotation.eulerAngles.x + shootingAngle/2);
+
+    Quaternion rotation = Quaternion.Euler(angle,
+                                           bulletSpawn.rotation.eulerAngles.y,
+                                           bulletSpawn.rotation.eulerAngles.z);
+
+    var newBullet = Instantiate(bullet, bulletSpawn.position, rotation);
+    newBullet.Init(bulletSpawn, rotation);
   }
 }

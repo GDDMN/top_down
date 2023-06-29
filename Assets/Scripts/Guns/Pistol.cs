@@ -1,9 +1,13 @@
+using UnityEngine;
+
 public class Pistol : Gun
 {
   public override void Shoot()
   {
-    var newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
-    newBullet.Init(bulletSpawn);
+    Quaternion rotation = bulletSpawn.rotation;
+
+    var newBullet = Instantiate(bullet, bulletSpawn.position, rotation);
+    newBullet.Init(bulletSpawn, rotation);
   }
 
 }

@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  gun: {fileID: 6387759974227341587, guid: e7701a81dcd423747aac66d6eedd2241, type: 3}
+  gun: {fileID: 6480874073778348435, guid: 44a7e06d9af6eb943a1277b1ce47a883, type: 3}
   hand: {fileID: 701982542501058827}
 --- !u!1 &8642979330557082828
 GameObject:
