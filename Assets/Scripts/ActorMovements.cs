@@ -11,6 +11,15 @@ public class ActorMovements : MonoBehaviour
     transform.position += moveDirection * scaledMoveSpeed;
   }
 
+  public void Rotation(Vector2 position)
+  {
+    Vector2 mousePosition = position;
+    mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+    Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+    transform.up = direction;
+  }
+
   public void Shoot()
   {
   }

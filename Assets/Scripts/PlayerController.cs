@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
   private void Update()
   {
     Vector2 direction = playerInput.Player.Move.ReadValue<Vector2>();
+    Vector2 rotationDirection = playerInput.Player.Rotation.ReadValue<Vector2>();
     actorMovements.Move(direction);
+    actorMovements.Rotation(rotationDirection);
   }
 }
