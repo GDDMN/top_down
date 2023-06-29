@@ -13,6 +13,6 @@ public class Bullet : MonoBehaviour
 
   private void Move()
   {
-    GetComponent<Rigidbody2D>().velocity = spawnPoint.up * speed;
+    GetComponent<Rigidbody2D>().velocity = spawnPoint.forward * speed;
   }
 }
