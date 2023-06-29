@@ -332,7 +332,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &6635186068485446371
+--- !u!1001 &1919522299
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -388,8 +388,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6635186070010813343, guid: 4b24c533edd794c4f807a07f207af93a, type: 3}
-      propertyPath: bullet
+      propertyPath: gun
       value: 
-      objectReference: {fileID: 7721513120088793489, guid: 0b5095547fedcd44e9c93fe7a939dd8b, type: 3}
+      objectReference: {fileID: 6480874073778348435, guid: 44a7e06d9af6eb943a1277b1ce47a883, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b24c533edd794c4f807a07f207af93a, type: 3}

@@ -3,9 +3,14 @@ using UnityEngine;
 public class ActorMovements : MonoBehaviour
 {
   [SerializeField] private float speed;
-  [SerializeField] private Bullet bullet;
+  [SerializeField] private Gun gun;
+  [SerializeField] private Transform hand;
 
-  [SerializeField] private Transform bulletSpawn;
+
+  private void Start()
+  {
+    PickUpGun(gun);
+  }
 
   public void Move(Vector2 direction)
   {
@@ -25,7 +30,12 @@ public class ActorMovements : MonoBehaviour
 
   public void Shoot()
   {
-    var newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
-    newBullet.Init(bulletSpawn);
+    gun.Shoot();
+  }
+
+  private void PickUpGun(Gun pickedGun)
+  {
+    gun = Instantiate(pickedGun, hand.position, hand.rotation);
+    gun.transform.SetParent(hand.transform);
   }
 }
