@@ -7,6 +7,10 @@ public class AssaultRifle : Gun
   [Range(0, 360)]
   public float shootingAngle;
 
+  [SerializeField] private float rateOfFire;
+  private float time = 0f;
+  private bool shooting = false;
+
   public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
   {
     if(!angleIsGlobal)
@@ -18,8 +22,26 @@ public class AssaultRifle : Gun
 
   public override void Shoot()
   {
-    float angle = Random.Range(bulletSpawn.rotation.eulerAngles.x - shootingAngle/2,
-                               bulletSpawn.rotation.eulerAngles.x + shootingAngle/2);
+    shooting = true;
+  }
+
+  public void Update()
+  {
+    if (shooting)
+      Shooting();
+  }
+
+  public void Shooting()
+  {
+    if (time < 1f)
+    {
+      time += rateOfFire * Time.deltaTime;
+      return;
+    }
+
+    time = 0f;
+    float angle = Random.Range(bulletSpawn.rotation.eulerAngles.x - shootingAngle / 2,
+                               bulletSpawn.rotation.eulerAngles.x + shootingAngle / 2);
 
     Quaternion rotation = Quaternion.Euler(angle,
                                            bulletSpawn.rotation.eulerAngles.y,
@@ -27,5 +49,12 @@ public class AssaultRifle : Gun
 
     var newBullet = Instantiate(bullet, bulletSpawn.position, rotation);
     newBullet.Init(bulletSpawn, rotation);
+
+  }
+
+  public override void StopShooting()
+  {
+    time = 1f;
+    shooting = false;
   }
 }

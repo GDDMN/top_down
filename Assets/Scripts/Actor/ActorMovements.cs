@@ -33,6 +33,11 @@ public class ActorMovements : MonoBehaviour
     gun.Shoot();
   }
 
+  public void StopShooting()
+  {
+    gun.StopShooting();
+  }
+
   private void PickUpGun(Gun pickedGun)
   {
     gun = Instantiate(pickedGun, hand.position, hand.rotation);

@@ -102,6 +102,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 7885066035653784323}
   shootingRadius: 0.24
   shootingAngle: 20
+  rateOfFire: 15
 --- !u!1 &7885066035653784322
 GameObject:
   m_ObjectHideFlags: 0

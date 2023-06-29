@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
 
   private void Start()
   {
-    playerInput.Player.Shoot.performed += context => actorMovements.Shoot();
+    playerInput.Player.Shoot.started += context => actorMovements.Shoot();
+    playerInput.Player.Shoot.canceled += context => actorMovements.StopShooting();
   }
 
   private void Update()
